@@ -7,6 +7,6 @@ console.log(' * * * * * * *');
 const number1 = 10;
 let j = 1;
 while (j <= 10) {
-  console.log(` ${number1} x ${j} = ${number1 * j}`);
+  console.log(`${number1} x ${j} = ${number1 * j}`);
   j++;
 }
