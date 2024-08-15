@@ -1,10 +1,10 @@
-const name = 'Nika';
+const name = "Nika";
 let age = 5;
 var isMarried, religion, dateOfBirth, sex;
 isMarried = false;
 religion = null;
 dateOfBirth = undefined;
-sex = 'Female';
+sex = "Female";
 
 console.log(`
     name is ${name}, 

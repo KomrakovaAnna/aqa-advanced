@@ -4,4 +4,3 @@ const ascendingNumbers = newNumbersList.toSorted((a, b) => a - b);
 
 console.log(newNumbersList);
 console.log(ascendingNumbers);
-
