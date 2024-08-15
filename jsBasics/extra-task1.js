@@ -3,7 +3,7 @@ function getSum(arr) {
 
   const arrSorted = arr.toSorted((a, b) => a - b);
   const lastNumber = arrSorted.length - 1;
-  arrCut = arrSorted.slice(1, lastNumber);
+  let arrCut = arrSorted.slice(1, lastNumber);
 
   let sum = 0;
   for (const number of arrCut) {
