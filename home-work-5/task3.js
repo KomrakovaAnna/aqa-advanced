@@ -3,7 +3,7 @@ const number = 1;
 for (let i = 1; i <= 10; i++) {
   console.log(`${number} x ${i} = ${number * i}`);
 }
-console.log(' * * * * * * *');
+console.log(" * * * * * * *");
 const number1 = 10;
 let j = 1;
 while (j <= 10) {

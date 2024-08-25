@@ -8,7 +8,7 @@ function recArea(width, height) {
  */
 console.log(recArea(5, 10));
 //function expression
-const getRectArea = function(width, height) {
+const getRectArea = function (width, height) {
   return width * height;
 };
 

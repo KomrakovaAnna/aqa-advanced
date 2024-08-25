@@ -14,7 +14,7 @@ for (let number of numbers) {
   } else if (number < 0) {
     negativeCount += 1;
   } else {
-    console.log('Not valid array');
+    console.log("Not valid array");
   }
 }
 
