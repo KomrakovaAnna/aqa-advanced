@@ -42,7 +42,14 @@ class AccountController extends BaseController {
         )
         return await response;
     }
-    
+
+    async getUserDataOnLogin(userName, password) {
+        const response = await this.axiosInstance.post("/Account/v1/Login", {
+            userName,
+            password,
+        });
+    return response.userId
+}
 }
 
 module.exports = new AccountController();
