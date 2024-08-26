@@ -10,8 +10,8 @@ class BooksController extends BaseController {
         return await this.axiosInstance.get('/BookStore/v1/Books');
     }
 
-    async getBookByISBN() {
-        return await this.axiosInstance.get('/BookStore/v1/Book?ISBN=9781593277574');
+    async getBookByISBN(isbn) {
+        return await this.axiosInstance.get(`/BookStore/v1/Book?ISBN=${isbn}`);
     }
 
     async addBook(userId, isbn, token){
@@ -32,10 +32,11 @@ class BooksController extends BaseController {
         );
     } 
     
-    async deleteBooks(userId, token){
-        return await this.axiosInstance.delete('/BookStore/v1/Books',
+    async deleteBook(isbn, userId, token){
+        return await this.axiosInstance.delete('/BookStore/v1/Book',
             {
-                userId,
+                isbn,
+                userId
                 
             },
             {
