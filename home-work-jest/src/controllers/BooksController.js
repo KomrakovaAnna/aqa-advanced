@@ -30,7 +30,21 @@ class BooksController extends BaseController {
                 },
              }
         );
-    }    
+    } 
+    
+    async deleteBooks(userId, token){
+        return await this.axiosInstance.delete('/BookStore/v1/Books',
+            {
+                userId,
+                
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+             }
+        );
+    }
 }
 
 module.exports = new BooksController();

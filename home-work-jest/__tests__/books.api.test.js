@@ -24,6 +24,12 @@ beforeAll(async () => {
         expect(response.data.title).toBe("Understanding ECMAScript 6");
     });
 
+    test("Delete book", async () => {
+        console.log(token);
+        const response = await BooksController.addBook('a507396c-d553-4b5e-9b4e-939b466c155f', token);
+        expect(response.status).toBe(204);
+    });
+
     test("Add book", async () => {
         console.log(token);
         const response = await BooksController.addBook('a507396c-d553-4b5e-9b4e-939b466c155f', '9781593277574', token);
