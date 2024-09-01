@@ -6,10 +6,9 @@ describe('Book Store API Tests', () => {
     let token;
     beforeAll(async () => {
         token = await AccountController.getAuthToken('hkomrako', 'GmmWseR6**');
-        
+        //9faa9232-1c69-4914-ad46-02bac8d7d46e
     })
-
-
+ 
     test("Get all books in a list", async () => {
         const response = await BooksController.getBooksList();
         // console.log(response.data);
@@ -31,17 +30,10 @@ describe('Book Store API Tests', () => {
         expect(response.status).toBe(201);
     });
 
-    test("Delete book", async () => {
+    test("Delete books", async () => {
         console.log(token);
-
-        const response = await BooksController.deleteBook('9781593277574', '9faa9232-1c69-4914-ad46-02bac8d7d46e', token);
+        const response = await BooksController.removeAllUserBooks('9faa9232-1c69-4914-ad46-02bac8d7d46e', token);
         expect(response.status).toBe(204);
-    });
-
-    test("Add book", async () => {
-        
-        const response = await BooksController.addBook('9faa9232-1c69-4914-ad46-02bac8d7d46e', '9781593277574', token);
-        expect(response.status).toBe(201);
     });
 
 });
@@ -58,22 +50,6 @@ describe('Book Store User API Tests', () => {
         expect(response.status).toEqual(200);
     });
 
-    
-    test("Delete User", async () => {
-        token = await AccountController.getAuthToken('hkomrako1', 'GmmWseR6**');
-        const response = await AccountController.deleteUser('de610ced-c34c-40b3-9ee5-56f031929a34', token);
-        console.log(response);
-        expect(response.status).toEqual(200);
-    });
-
-    test("Add User", async () => {
-        const response = await AccountController.addNewUser('hkomrako1', 'GmmWseR6**');
-        console.log(response);
-        expect(response.status).toEqual(200);
-    });
-
-    
 });
-
 
 

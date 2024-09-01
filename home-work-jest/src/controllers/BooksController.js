@@ -6,7 +6,7 @@ class BooksController extends BaseController {
         super();
     }
 
-    async getBooksList(){
+    async getBooksList() {
         return await this.axiosInstance.get('/BookStore/v1/Books');
     }
 
@@ -14,36 +14,32 @@ class BooksController extends BaseController {
         return await this.axiosInstance.get(`/BookStore/v1/Book?ISBN=${isbn}`);
     }
 
-    async addBook(userId, isbn, token){
+    async addBook(userId, isbn, token) {
         return await this.axiosInstance.post('/BookStore/v1/Books',
             {
                 userId,
                 collectionOfIsbns: [
-                  {
-                    isbn,
-                  },
+                    {
+                        isbn,
+                    },
                 ],
             },
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
-             }
+            }
         );
-    } 
-    
-    async deleteBook(isbn, userId, token){
-        return await this.axiosInstance.delete('/BookStore/v1/Book',
-            {
-                isbn,
-                userId
-                
-            },
+    }
+
+    async removeAllUserBooks(userId, token) {
+        return await this.axiosInstance.delete(
+            `https://bookstore.toolsqa.com/BookStore/v1/Books?UserId=${userId}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
-             }
+            }
         );
     }
 }
